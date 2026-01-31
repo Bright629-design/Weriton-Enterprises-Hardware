@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Weriton Enterprises</title>
+    <meta name="description"
+        content="Frequently Asked Questions about Weriton Enterprises' products, services, and construction solutions.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        body: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Accordion Styles */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .accordion-content.open {
+            opacity: 1;
+        }
+
+        .accordion-trigger i {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-trigger[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="font-body antialiased min-h-screen bg-background flex flex-col">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-16 items-center justify-between">
+            <div class="mr-4 flex items-center">
+                <a href="index.html" class="mr-6 flex items-center space-x-2">
+                    <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                    <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <!-- Dropdown: Hardware -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-foreground/60 hover:text-primary focus:outline-none">
+                            Hardware & Supplies
+                            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 w-56 hidden group-hover:block hover:block z-50">
+                            <div class="rounded-md border bg-popover p-2 shadow-md">
+                                <a href="hardware.html#materials"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="construction" class="mr-2 h-4 w-4"></i> Construction Materials
+                                </a>
+                                <a href="hardware.html#electrical"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Electrical Supplies
+                                </a>
+                                <a href="hardware.html#plumbing"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Plumbing & Sanitary
+                                </a>
+                                <a href="hardware.html#tools"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Tools & Equipment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="finishing-security.html" class="text-foreground/60 hover:text-primary">Finishing &
+                        Security</a>
+
+                    <a href="renovation.html" class="text-foreground/60 hover:text-primary">Renovation Services</a>
+
+                    <a href="projects.html" class="text-foreground/60 hover:text-primary">Projects</a>
+                    <a href="blog.html" class="text-foreground/60 hover:text-primary">Blog</a>
+                    <a href="about.html" class="text-foreground/60 hover:text-primary">About</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="quote-request.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                    Request a Quote
+                </a>
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex flex-col h-full p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                    </a>
+                    <button id="close-menu-btn" class="p-2">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                <nav class="grid gap-4 overflow-y-auto">
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Hardware & Supplies</h4>
+                        <a href="hardware.html#materials" class="block px-3 py-2 hover:text-primary">Construction
+                            Materials</a>
+                        <a href="hardware.html#electrical" class="block px-3 py-2 hover:text-primary">Electrical
+                            Supplies</a>
+                        <a href="hardware.html#plumbing" class="block px-3 py-2 hover:text-primary">Plumbing &
+                            Sanitary</a>
+                        <a href="hardware.html#tools" class="block px-3 py-2 hover:text-primary">Tools & Equipment</a>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Finishing & Security</h4>
+                        <a href="finishing-security.html#finishing" class="block px-3 py-2 hover:text-primary">Finishing
+                            Materials</a>
+                        <a href="finishing-security.html#security" class="block px-3 py-2 hover:text-primary">Security &
+                            Safety</a>
+                    </div>
+                    <a href="renovation.html" class="block px-3 py-2 font-medium hover:text-primary">Renovation
+                        Services</a>
+                    <a href="projects.html" class="block px-3 py-2 font-medium hover:text-primary">Projects</a>
+                    <a href="blog.html" class="block px-3 py-2 font-medium hover:text-primary">Blog</a>
+                    <a href="about.html" class="block px-3 py-2 font-medium hover:text-primary">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <div class="container py-12 md:py-16">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-headline font-bold">Frequently Asked Questions</h1>
+                <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Find answers to common questions about our products, services, and processes.
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- Example Accordion Item 1 -->
+                <div class="border-b">
+                    <button
+                        class="accordion-trigger flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        What types of clients do you serve?
+                        <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="pb-4 pt-0">
+                            We serve a wide range of clients including individual homeowners, DIY enthusiasts,
+                            professional contractors, developers, interior designers, and corporate clients.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Accordion Item 2 -->
+                <div class="border-b">
+                    <button
+                        class="accordion-trigger flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        What are your quality standards for products?
+                        <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="pb-4 pt-0">
+                            We source our products from reputable manufacturers who meet stringent quality and safety
+                            standards. All our materials are commercial-grade and built to last.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Accordion Item 3 -->
+                <div class="border-b">
+                    <button
+                        class="accordion-trigger flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        Do you offer delivery services?
+                        <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="pb-4 pt-0">
+                            Yes, we offer reliable delivery services for all our products. We have a fleet of trucks to
+                            handle orders of any size, from a few items to a full construction site delivery.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Accordion Item 4 -->
+                <div class="border-b">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        Do you offer installation services?
+                        <i data-lucide="chevron-down" class="h-5 w-5 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="mt-2 text-muted-foreground hidden">
+                            <p>Yes! We have a full team of skilled professionals who can handle everything from
+                                electrical and plumbing installations to full-scale renovations. We are more than just a
+                                supply store.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Accordion Item 5 -->
+                <div class="border-b">
+                    <button
+                        class="accordion-trigger flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        How do I get a quote for a large project or renovation?
+                        <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="pb-4 pt-0">
+                            You can use the 'Request a Quote' form on our website to provide details about your project.
+                            For large-scale projects, we recommend contacting our sales team directly to discuss your
+                            specific needs.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Accordion Item 6 -->
+                <div class="border-b">
+                    <button
+                        class="accordion-trigger flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-lg"
+                        aria-expanded="false" onclick="toggleAccordion(this)">
+                        Do you offer installation services for the products you sell?
+                        <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content text-base text-muted-foreground">
+                        <div class="pb-4 pt-0">
+                            Yes, we have a team of skilled professionals who can provide installation for many of the
+                            products we sell, including electrical, plumbing, flooring, and security systems. This is
+                            part of our end-to-end service offering.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t bg-secondary">
+        <div class="container py-12 text-secondary-foreground">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="flex flex-col space-y-4 col-span-2 md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline">Weriton Enterprises</span>
+                    </a>
+                    <p class="text-sm text-muted-foreground">Quality materials, professional tools, and renovation
+                        expertise under one roof.</p>
+                    <address class="not-italic text-sm text-muted-foreground space-y-1">
+                        <p>Kipsitet, along kericho-Kisumu road</p>
+                        <p>Email: <a href="mailto:cheruiyotemicky@gmail.com"
+                                class="hover:text-primary transition-colors">cheruiyotemicky@gmail.com</a></p>
+                        <p>Phone: <a href="tel:0739307745" class="hover:text-primary transition-colors">0739307745</a>
+                        </p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="hardware.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Hardware &
+                                Supplies</a></li>
+                        <li><a href="finishing-security.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing &
+                                Security</a></li>
+                        <li><a href="renovation.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                        <li><a href="projects.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="why-us.html" class="text-muted-foreground hover:text-primary transition-colors">Why
+                                Choose Us</a></li>
+                        <li><a href="testimonials.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
+                        <li><a href="blog.html" class="text-muted-foreground hover:text-primary transition-colors">Blog
+                                / Insights</a></li>
+                        <li><a href="faq.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+                        <li><a href="contact.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h3 class="font-semibold font-headline mb-4">Our Offerings</h3>
+                    <ul class="space-y-2 text-sm columns-2">
+                        <li><a href="hardware.html#materials"
+                                class="text-muted-foreground hover:text-primary transition-colors">Construction
+                                Materials</a></li>
+                        <li><a href="hardware.html#electrical"
+                                class="text-muted-foreground hover:text-primary transition-colors">Electrical
+                                Supplies</a></li>
+                        <li><a href="hardware.html#plumbing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Plumbing &
+                                Sanitary</a></li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Tools & Equipment</a>
+                        </li>
+                        <li><a href="finishing-security.html#finishing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing
+                                Materials</a></li>
+                        <li><a href="finishing-security.html#security"
+                                class="text-muted-foreground hover:text-primary transition-colors">Security & Safety</a>
+                        </li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Power Tools &
+                                Machinery</a></li>
+                        <li><a href="renovation.html#renovation"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+                <p>&copy; 2025 Weriton Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Close all other accordions
+            const buttons = document.querySelectorAll('.accordion-trigger');
+            buttons.forEach(btn => {
+                if (btn !== button) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.nextElementSibling.style.maxHeight = null;
+                    btn.nextElementSibling.classList.remove('open');
+                }
+            });
+
+            // Toggle current accordion
+            button.setAttribute('aria-expanded', !isExpanded);
+
+            if (!isExpanded) {
+                content.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.classList.remove('open');
+                content.style.maxHeight = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

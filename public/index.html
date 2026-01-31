@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weriton Enterprises - Hardware & Construction Supplies</title>
+    <meta name="description"
+        content="Complete hardware solutions, construction materials, and renovation excellence. Quality materials, professional tools, and expert guidance under one roof.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Carousel Styles */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        body: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-body antialiased min-h-screen bg-background flex flex-col">
+
+    <!-- Header -->
+    <header
+        className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-16 items-center justify-between">
+            <div class="mr-4 flex items-center">
+                <a href="index.html" class="mr-6 flex items-center space-x-2">
+                    <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                    <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <!-- Dropdown: Hardware -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-foreground/60 hover:text-primary focus:outline-none">
+                            Hardware & Supplies
+                            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 w-56 hidden group-hover:block hover:block z-50">
+                            <div class="rounded-md border bg-popover p-2 shadow-md">
+                                <a href="hardware.html#materials"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="construction" class="mr-2 h-4 w-4"></i> Construction Materials
+                                </a>
+                                <a href="hardware.html#electrical"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Electrical Supplies
+                                </a>
+                                <a href="hardware.html#plumbing"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Plumbing & Sanitary
+                                </a>
+                                <a href="hardware.html#tools"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Tools & Equipment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="finishing-security.html" class="text-foreground/60 hover:text-primary">Finishing &
+                        Security</a>
+
+                    <a href="renovation.html" class="text-foreground/60 hover:text-primary">Renovation Services</a>
+
+                    <a href="projects.html" class="text-foreground/60 hover:text-primary">Projects</a>
+                    <a href="blog.html" class="text-foreground/60 hover:text-primary">Blog</a>
+                    <a href="about.html" class="text-foreground/60 hover:text-primary">About</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="quote-request.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                    Request a Quote
+                </a>
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex flex-col h-full p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                    </a>
+                    <button id="close-menu-btn" class="p-2">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                <nav class="grid gap-4 overflow-y-auto">
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Hardware & Supplies</h4>
+                        <a href="hardware.html#materials" class="block px-3 py-2 hover:text-primary">Construction
+                            Materials</a>
+                        <a href="hardware.html#electrical" class="block px-3 py-2 hover:text-primary">Electrical
+                            Supplies</a>
+                        <a href="hardware.html#plumbing" class="block px-3 py-2 hover:text-primary">Plumbing &
+                            Sanitary</a>
+                        <a href="hardware.html#tools" class="block px-3 py-2 hover:text-primary">Tools & Equipment</a>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Finishing & Security</h4>
+                        <a href="finishing-security.html#finishing" class="block px-3 py-2 hover:text-primary">Finishing
+                            Materials</a>
+                        <a href="finishing-security.html#security" class="block px-3 py-2 hover:text-primary">Security &
+                            Safety</a>
+                    </div>
+                    <a href="renovation.html" class="block px-3 py-2 font-medium hover:text-primary">Renovation
+                        Services</a>
+                    <a href="projects.html" class="block px-3 py-2 font-medium hover:text-primary">Projects</a>
+                    <a href="blog.html" class="block px-3 py-2 font-medium hover:text-primary">Blog</a>
+                    <a href="about.html" class="block px-3 py-2 font-medium hover:text-primary">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section
+            class="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden group">
+            <div class="carousel-container absolute inset-0 w-full h-full">
+                <div class="carousel-track" id="hero-carousel">
+                    <!-- JS will populate overlapping or sliding images here, doing simple fade for now -->
+                    <div class="absolute inset-0 transition-opacity duration-1000 opacity-100">
+                        <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTc2ODQ0MjU0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="modern living room" class="object-cover w-full h-full">
+                    </div>
+                    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
+                        <img src="images/home1.jpg" alt="kitchen installation" class="object-cover w-full h-full">
+                    </div>
+                    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
+                        <img src="https://images.unsplash.com/photo-1615406020658-6c4b805f1f30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY4NDcyNjY1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="modern architecture" class="object-cover w-full h-full">
+                    </div>
+                    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
+                        <img src="https://images.unsplash.com/photo-1620388640785-892616248ec8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoYXJkd2FyZSUyMHN0b3JlfGVufDB8fHx8MTc2ODUwMzk5MXww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="hardware store" class="object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 max-w-4xl p-4">
+                <h1 class="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
+                    Complete Hardware Solutions & Quality Construction Supplies
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
+                    Quality materials, professional tools, and expert guidance under one roof.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="hardware.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+                        Explore Products <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                    <a href="quote-request.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">
+                        Request a Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold">What We Offer</h2>
+                    <p class="mt-4 text-lg text-muted-foreground">
+                        Weriton Enterprises is your one-stop-shop, seamlessly blending a comprehensive hardware supplier
+                        with expert renovation and installation services.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                    <!-- Item 1 -->
+                    <a href="hardware.html">
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm text-center h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div
+                                    class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i data-lucide="wrench" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="font-headline text-xl font-semibold leading-none tracking-tight">Hardware
+                                    Tools Supply</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground">Your trusted source for professional tools, hardware
+                                    equipment, and construction supplies.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Item 2 -->
+                    <a href="finishing-security.html">
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm text-center h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div
+                                    class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i data-lucide="paint-bucket" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="font-headline text-xl font-semibold leading-none tracking-tight">Paint Supply
+                                    & Finishing</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground">Premier supplier of high-quality paints, coatings, and
+                                    finishing materials for all surfaces.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Item 3 -->
+                    <a href="hardware.html#tools">
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm text-center h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div
+                                    class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i data-lucide="drill" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="font-headline text-xl font-semibold leading-none tracking-tight">Power Tools
+                                    &
+                                    Machinery</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground">High-performance power tools and industrial machinery
+                                    for
+                                    every project and professional.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Item 4 -->
+                    <a href="renovation.html">
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm text-center h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex flex-col space-y-1.5 p-6">
+                                <div
+                                    class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                    <i data-lucide="hammer" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="font-headline text-xl font-semibold leading-none tracking-tight">Renovation &
+                                    Installation</h3>
+                            </div>
+                            <div class="p-6 pt-0">
+                                <p class="text-muted-foreground">Expert installation and renovation services managed by
+                                    our team of skilled professionals.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Counter Section -->
+        <!-- Stats Counter Section -->
+        <section class="py-12 bg-background/50 border-t border-b mb-8">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Stat 1 -->
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-card rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center group h-full border">
+                        <div
+                            class="bg-orange-950/10 p-4 rounded-full mb-4 group-hover:bg-orange-950/20 transition-colors ring-1 ring-orange-950/20">
+                            <i data-lucide="layers" class="h-8 w-8 text-[#5c2304]"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold font-headline text-[#5c2304] mb-1">40+</h3>
+                        <p class="text-muted-foreground font-medium uppercase tracking-wide text-sm">Services Offered
+                        </p>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-card rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center group h-full border">
+                        <div
+                            class="bg-orange-950/10 p-4 rounded-full mb-4 group-hover:bg-orange-950/20 transition-colors ring-1 ring-orange-950/20">
+                            <i data-lucide="wrench" class="h-8 w-8 text-[#5c2304]"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold font-headline text-[#5c2304] mb-1">10000+</h3>
+                        <p class="text-muted-foreground font-medium uppercase tracking-wide text-sm">Tools Sold</p>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-card rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center group h-full border">
+                        <div
+                            class="bg-orange-950/10 p-4 rounded-full mb-4 group-hover:bg-orange-950/20 transition-colors ring-1 ring-orange-950/20">
+                            <i data-lucide="users" class="h-8 w-8 text-[#5c2304]"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold font-headline text-[#5c2304] mb-1">2000+</h3>
+                        <p class="text-muted-foreground font-medium uppercase tracking-wide text-sm">Happy Clients</p>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-card rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center group h-full border">
+                        <div
+                            class="bg-orange-950/10 p-4 rounded-full mb-4 group-hover:bg-orange-950/20 transition-colors ring-1 ring-orange-950/20">
+                            <i data-lucide="headset" class="h-8 w-8 text-[#5c2304]"></i>
+                        </div>
+                        <h3 class="text-4xl font-bold font-headline text-[#5c2304] mb-1">24/7</h3>
+                        <p class="text-muted-foreground font-medium uppercase tracking-wide text-sm">Support Available
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-16 md:py-24 bg-secondary">
+            <div class="container">
+                <h2 class="text-3xl md:text-4xl font-headline font-bold text-center mb-2">Featured Products</h2>
+                <p class="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+                    A selection of our top-rated tools and materials, trusted by professionals and DIYers alike.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product 1 -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="https://images.unsplash.com/photo-1592054286113-649ba108e968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb3dlciUyMGRyaWxsfGVufDB8fHx8MTc2ODQ2NzU2NXww&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="20V MAX Cordless Drill Kit"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">tools</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">20V MAX Cordless Drill Kit
+                            </h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">High-performance
+                                cordless drill with two batteries, charger, and carrying case. Ideal for both
+                                professional and DIY projects.</p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=power-drill-kit"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="https://images.unsplash.com/photo-1660521246573-54796e6161b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYWludCUyMGNhbnN8ZW58MHx8fHwxNzY4Mzk5MjY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Premium Interior Latex Paint"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">finishing</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Premium Interior Latex
+                                Paint</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">One-coat coverage paint
+                                and primer in one. Available in over 1,000 colors with a durable, washable finish.</p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=premium-interior-paint"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="images/paint1.jpeg" alt="Premium Wall Paint"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">finishing</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Premium Wall Paint</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">High-coverage, durable
+                                interior emulsion paint. Available in a wide range of colors to transform your space
+                                with a perfect matte or satin finish.</p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=premium-wall-paint"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="https://images.unsplash.com/photo-1696013910376-c56f76dd8178?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzbWFydCUyMGxvY2t8ZW58MHx8fHwxNzY4NTAzOTkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="WiFi Smart Lock Deadbolt"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">safety</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">WiFi Smart Lock Deadbolt
+                            </h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">Keyless entry smart
+                                lock with built-in WiFi. Lock and unlock your door from anywhere using your smartphone.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=smart-lock-deadbolt"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5: Construction Glass -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="images/glass1.webp" alt="Construction Glass"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">materials</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Construction Glass</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">High-quality clear and
+                                tinted float glass for windows, doors, and partitions. Available in various thicknesses.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=construction-glass"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 6: Roofing Sheets -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="images/sheets1.png" alt="Roofing Sheets"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">materials</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Roofing Sheets</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">Durable galvanized
+                                corrugated roofing sheets. Rust-resistant and weather-proof for long-lasting protection.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=roofing-sheets"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 7: Steel Rebar -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="images/steel1.jpg" alt="Steel Rebar"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">materials</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Steel Rebar</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">High-strength deformed
+                                steel reinforcement bars for concrete structures. Essential for strong foundations.</p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=steel-rebar"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 8: Cement -->
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img src="images/cement1.webp" alt="Portland Cement"
+                                class="object-cover w-full h-full transition-transform hover:scale-105 duration-300">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 capitalize">materials</span>
+                            </div>
+                            <h3 class="font-semibold font-headline text-lg mb-2 line-clamp-1">Portland Cement</h3>
+                            <p class="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">General purpose
+                                Portland cement for all concrete and mortar applications. consistent quality and
+                                strength.</p>
+                            <div class="flex items-center justify-between mt-auto">
+
+                                <a href="product.html?id=portland-cement"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="hardware.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8">
+                        View All Hardware
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- High Performance Tools -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="container grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <i data-lucide="drill" class="h-12 w-12 text-primary mb-4"></i>
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Premium Hardware & Tools</h2>
+                    <p class="text-muted-foreground mb-6 text-lg">
+                        We stock a vast expertise of top-tier tools and equipment. Whether you need precision hand tools
+                        or heavy-duty industrial machinery, we have everything to equip your workshop or job site.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Professional Power Tools</li>
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Hand Tools & Accessories
+                        </li>
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Industrial Cleaning Equipment
+                        </li>
+                    </ul>
+                    <a href="hardware.html#tools"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+                        Shop Tools <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3">
+                    <img src="images/tool1.jpg" alt="High performance power tools" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Renovation -->
+        <section class="py-16 md:py-24 bg-secondary">
+            <div class="container grid md:grid-cols-2 gap-12 items-center">
+                <div class="rounded-lg overflow-hidden shadow-lg aspect-w-4 aspect-h-3 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1571843439991-dd2b8e051966?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aG9tZSUyMHJlbm92YXRpb258ZW58MHx8fHwxNzY4NTAzOTkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                        alt="Construction worker doing renovation" class="w-full h-full object-cover">
+                </div>
+                <div class="md:order-1">
+                    <i data-lucide="hammer" class="h-12 w-12 text-primary mb-4"></i>
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Professional Renovation & Installation
+                    </h2>
+                    <p class="text-muted-foreground mb-6 text-lg">
+                        We provide end-to-end renovation solutions. Our skilled tradespeople handle everything from
+                        electrical and plumbing to structural changes and final finishes, ensuring your project is
+                        completed to the highest standards.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Full Home & Office Renovations</li>
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Electrical & Plumbing Installation
+                        </li>
+                        <li class="flex items-center"><i data-lucide="check-circle"
+                                class="h-5 w-5 text-primary mr-3 flex-shrink-0"></i> Project Management & Supervision
+                        </li>
+                    </ul>
+                    <a href="renovation.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+                        Explore Renovations <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section class="py-16 md:py-24 bg-background">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold">Why Weriton Enterprises?</h2>
+                    <p class="mt-4 text-lg text-muted-foreground">
+                        We're committed to building lasting relationships with our clients by providing unparalleled
+                        service, quality, and value.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Point 1 -->
+                    <div class="text-center border-0 shadow-none rounded-lg bg-card text-card-foreground">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div
+                                class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                <i data-lucide="badge-check" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-headline text-2xl font-semibold leading-none tracking-tight">Quality
+                                Assurance</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <p class="text-muted-foreground">We source only the highest-quality materials and tools from
+                                trusted brands to guarantee durability and performance.</p>
+                        </div>
+                    </div>
+                    <!-- Point 2 -->
+                    <div class="text-center border-0 shadow-none rounded-lg bg-card text-card-foreground">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div
+                                class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                <i data-lucide="users" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-headline text-2xl font-semibold leading-none tracking-tight">Skilled
+                                Professionals</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <p class="text-muted-foreground">Our team of designers, contractors, and technicians are
+                                experienced, certified, and dedicated to excellence.</p>
+                        </div>
+                    </div>
+                    <!-- Point 3 -->
+                    <div class="text-center border-0 shadow-none rounded-lg bg-card text-card-foreground">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div
+                                class="mx-auto bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                                <i data-lucide="truck" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-headline text-2xl font-semibold leading-none tracking-tight">Reliable Supply
+                                Chain</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <p class="text-muted-foreground">With our robust logistics network, we ensure your materials
+                                and products are delivered on time, every time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="why-us.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 md:py-24 bg-primary text-primary-foreground text-center">
+            <div class="container">
+                <h2 class="text-3xl md:text-4xl font-headline font-bold">Ready to Start Your Project?</h2>
+                <p class="mt-4 text-lg max-w-2xl mx-auto mb-8">
+                    Whether you're a homeowner planning a DIY project, a contractor stocking up for a job, or a
+                    developer planning a new build, we have the solutions you need.
+                </p>
+                <a href="quote-request.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">
+                    Get a Quote Today <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Location Update Modal -->
+    <div id="location-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div
+            class="bg-card text-card-foreground rounded-lg shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 relative">
+            <!-- Close Button -->
+            <button id="close-location-modal"
+                class="absolute top-4 right-4 text-muted-foreground hover:text-foreground focus:outline-none">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+
+            <div class="p-6 text-center">
+                <h3 class="text-2xl font-headline font-bold text-primary mb-2">Location Update</h3>
+                <p class="text-muted-foreground mb-6">
+                    We are located at <span class="font-semibold text-foreground">Kipsitet, along Kericho-Kisumu
+                        Road</span>.
+                    Visit our main store for all your hardware and renovation needs.
+                </p>
+
+                <!-- Map Preview (Static Placeholder or iframe) -->
+                <div class="rounded-md overflow-hidden aspect-video bg-muted mb-6 relative group">
+                    <!-- Placeholder Map Image -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.976029272337!2d35.1583!3d-0.2167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182a56e0775a46c1%3A0x62c953569769a6c6!2sKipsitet!5e0!3m2!1sen!2ske!4v1706178000000!5m2!1sen!2ske"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="w-full h-full object-cover">
+                    </iframe>
+                </div>
+
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 w-full">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t bg-secondary">
+        <div class="container py-12 text-secondary-foreground">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="flex flex-col space-y-4 col-span-2 md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline">Weriton Enterprises</span>
+                    </a>
+                    <p class="text-sm text-muted-foreground">Quality materials, professional tools, and renovation
+                        expertise under one roof.</p>
+                    <address class="not-italic text-sm text-muted-foreground space-y-1">
+                        <p>Kipsitet, along kericho-Kisumu road</p>
+                        <p>Email: <a href="mailto:cheruiyotemicky@gmail.com"
+                                class="hover:text-primary transition-colors">cheruiyotemicky@gmail.com</a></p>
+                        <p>Phone: <a href="tel:0739307745" class="hover:text-primary transition-colors">0739307745</a>
+                        </p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="hardware.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Hardware &
+                                Supplies</a></li>
+                        <li><a href="finishing-security.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing &
+                                Security</a></li>
+                        <li><a href="renovation.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                        <li><a href="projects.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="why-us.html" class="text-muted-foreground hover:text-primary transition-colors">Why
+                                Choose Us</a></li>
+                        <li><a href="testimonials.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
+                        <li><a href="blog.html" class="text-muted-foreground hover:text-primary transition-colors">Blog
+                                / Insights</a></li>
+                        <li><a href="faq.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+                        <li><a href="contact.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h3 class="font-semibold font-headline mb-4">Our Offerings</h3>
+                    <ul class="space-y-2 text-sm columns-2">
+                        <li><a href="hardware.html#materials"
+                                class="text-muted-foreground hover:text-primary transition-colors">Construction
+                                Materials</a></li>
+                        <li><a href="hardware.html#electrical"
+                                class="text-muted-foreground hover:text-primary transition-colors">Electrical
+                                Supplies</a></li>
+                        <li><a href="hardware.html#plumbing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Plumbing &
+                                Sanitary</a></li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Tools & Equipment</a>
+                        </li>
+                        <li><a href="finishing-security.html#finishing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing
+                                Materials</a></li>
+                        <li><a href="finishing-security.html#security"
+                                class="text-muted-foreground hover:text-primary transition-colors">Security & Safety</a>
+                        </li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Power Tools &
+                                Machinery</a></li>
+                        <li><a href="renovation.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+                <p>&copy; 2025 Weriton Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Carousel Logic (Simple Fade)
+        const slides = document.querySelectorAll('.carousel-track .absolute');
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('opacity-100');
+            slides[currentSlide].classList.add('opacity-0');
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('opacity-100');
+        }
+
+        setInterval(nextSlide, slideInterval);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Location Modal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('location-modal');
+            const closeBtn = document.getElementById('close-location-modal');
+
+            if (modal && closeBtn) {
+                const modalContent = modal.querySelector('div');
+
+                // Show modal after a small delay
+                setTimeout(() => {
+                    modal.classList.remove('hidden');
+                    // Trigger reflow for transition
+                    void modal.offsetWidth;
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }, 1000);
+
+                function closeModal() {
+                    modal.classList.add('opacity-0');
+                    modalContent.classList.remove('scale-100');
+                    modalContent.classList.add('scale-95');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 300);
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+
+                // Close on click outside
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Weriton Enterprises</title>
+    <meta name="description"
+        content="Read what our clients have to say about their experience with Weriton Enterprises.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px',
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        body: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-body antialiased min-h-screen bg-background flex flex-col">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-16 items-center justify-between">
+            <div class="mr-4 flex items-center">
+                <a href="index.html" class="mr-6 flex items-center space-x-2">
+                    <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                    <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <!-- Dropdown: Hardware -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 text-foreground/60 hover:text-primary focus:outline-none">
+                            Hardware & Supplies
+                            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 w-56 hidden group-hover:block hover:block z-50">
+                            <div class="rounded-md border bg-popover p-2 shadow-md">
+                                <a href="hardware.html#materials"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="construction" class="mr-2 h-4 w-4"></i> Construction Materials
+                                </a>
+                                <a href="hardware.html#electrical"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Electrical Supplies
+                                </a>
+                                <a href="hardware.html#plumbing"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Plumbing & Sanitary
+                                </a>
+                                <a href="hardware.html#tools"
+                                    class="flex items-center rounded-sm px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground">
+                                    <i data-lucide="wrench" class="mr-2 h-4 w-4"></i> Tools & Equipment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="finishing-security.html" class="text-foreground/60 hover:text-primary">Finishing &
+                        Security</a>
+
+                    <a href="renovation.html" class="text-foreground/60 hover:text-primary">Renovation Services</a>
+
+                    <a href="projects.html" class="text-foreground/60 hover:text-primary">Projects</a>
+                    <a href="blog.html" class="text-foreground/60 hover:text-primary">Blog</a>
+                    <a href="about.html" class="text-foreground/60 hover:text-primary">About</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="quote-request.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                    Request a Quote
+                </a>
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex flex-col h-full p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline text-lg">Weriton Enterprises</span>
+                    </a>
+                    <button id="close-menu-btn" class="p-2">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+                <nav class="grid gap-4 overflow-y-auto">
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Hardware & Supplies</h4>
+                        <a href="hardware.html#materials" class="block px-3 py-2 hover:text-primary">Construction
+                            Materials</a>
+                        <a href="hardware.html#electrical" class="block px-3 py-2 hover:text-primary">Electrical
+                            Supplies</a>
+                        <a href="hardware.html#plumbing" class="block px-3 py-2 hover:text-primary">Plumbing &
+                            Sanitary</a>
+                        <a href="hardware.html#tools" class="block px-3 py-2 hover:text-primary">Tools & Equipment</a>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-muted-foreground px-3 mb-2">Finishing & Security</h4>
+                        <a href="finishing-security.html#finishing" class="block px-3 py-2 hover:text-primary">Finishing
+                            Materials</a>
+                        <a href="finishing-security.html#security" class="block px-3 py-2 hover:text-primary">Security &
+                            Safety</a>
+                    </div>
+                    <a href="renovation.html" class="block px-3 py-2 font-medium hover:text-primary">Renovation
+                        Services</a>
+                    <a href="projects.html" class="block px-3 py-2 font-medium hover:text-primary">Projects</a>
+                    <a href="blog.html" class="block px-3 py-2 font-medium hover:text-primary">Blog</a>
+                    <a href="about.html" class="block px-3 py-2 font-medium hover:text-primary">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <!-- Banner -->
+        <section class="relative h-[40vh] md:h-[50vh] w-full flex items-center justify-center text-center text-white">
+            <img src="images/testimonials.webp" alt="happy customers"
+                class="object-cover w-full h-full absolute inset-0">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 max-w-4xl p-4">
+                <h1 class="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
+                    What Our Clients Say
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow">
+                    Stories of trust, quality, and success from our valued partners and customers.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-background">
+            <div class="container">
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                    <!-- Testimonial 1 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">JD</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">John D., Homeowner</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "The renovation team at Weriton was incredible. They took our vague ideas for a kitchen
+                                remodel and turned them into a reality. The quality of the cabinets and tile they
+                                supplied is top-notch."e professionalism of the installation crew were top-notch."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">SP</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Sarah P., Prime Contractors</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "As a general contractor, having a reliable supplier is crucial. Weriton Enterprises has
+                                been my go-to for years. They always have what I need in stock, their pricing is fair,
+                                and their delivery is always on time. They are a true partner."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">MR</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Mike R., Developer</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "For our latest commercial project, Weriton handled everything from material procurement
+                                for the structure to the final decorative finishes. Their end-to-end service saved us
+                                time and money, and the final result exceeded our expectations."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">EC</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Emily C., Renovator</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "I rely on Weriton for their vast selection of high-quality finishing materials. Their
+                                team is knowledgeable and always helps me find the perfect tiles, paints, and hardware
+                                to bring my client's vision to life."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">DL</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">David L., DIY Enthusiast</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 text-muted-foreground/30"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "The staff at the hardware counter are amazing. I'm a weekend warrior, and they've
+                                patiently answered countless questions and given me great advice for my home projects.
+                                Their tool selection is fantastic."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="break-inside-avoid rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border">
+                                    <span
+                                        class="flex h-full w-full items-center justify-center rounded-full bg-muted">JB</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Jessica B., Facility Manager</p>
+                                    <div class="flex text-primary">
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <blockquote class="italic text-muted-foreground">
+                                "We use Weriton for all our facility's maintenance and safety supplies. Their security
+                                solutions, from CCTV to access control hardware, are reliable and their team provided
+                                excellent training and support."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t bg-secondary">
+        <div class="container py-12 text-secondary-foreground">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="flex flex-col space-y-4 col-span-2 md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="construction" class="h-6 w-6 text-primary"></i>
+                        <span class="font-bold font-headline">Weriton Enterprises</span>
+                    </a>
+                    <p class="text-sm text-muted-foreground">Quality materials, professional tools, and renovation
+                        expertise under one roof.</p>
+                    <address class="not-italic text-sm text-muted-foreground space-y-1">
+                        <p>Kipsitet, along kericho-Kisumu road</p>
+                        <p>Email: <a href="mailto:cheruiyotemicky@gmail.com"
+                                class="hover:text-primary transition-colors">cheruiyotemicky@gmail.com</a></p>
+                        <p>Phone: <a href="tel:0739307745" class="hover:text-primary transition-colors">0739307745</a>
+                        </p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="hardware.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Hardware &
+                                Supplies</a></li>
+                        <li><a href="finishing-security.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing &
+                                Security</a></li>
+                        <li><a href="renovation.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                        <li><a href="projects.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold font-headline mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="why-us.html" class="text-muted-foreground hover:text-primary transition-colors">Why
+                                Choose Us</a></li>
+                        <li><a href="testimonials.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
+                        <li><a href="blog.html" class="text-muted-foreground hover:text-primary transition-colors">Blog
+                                / Insights</a></li>
+                        <li><a href="faq.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+                        <li><a href="contact.html"
+                                class="text-muted-foreground hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h3 class="font-semibold font-headline mb-4">Our Offerings</h3>
+                    <ul class="space-y-2 text-sm columns-2">
+                        <li><a href="hardware.html#materials"
+                                class="text-muted-foreground hover:text-primary transition-colors">Construction
+                                Materials</a></li>
+                        <li><a href="hardware.html#electrical"
+                                class="text-muted-foreground hover:text-primary transition-colors">Electrical
+                                Supplies</a></li>
+                        <li><a href="hardware.html#plumbing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Plumbing &
+                                Sanitary</a></li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Tools & Equipment</a>
+                        </li>
+                        <li><a href="finishing-security.html#finishing"
+                                class="text-muted-foreground hover:text-primary transition-colors">Finishing
+                                Materials</a></li>
+                        <li><a href="finishing-security.html#security"
+                                class="text-muted-foreground hover:text-primary transition-colors">Security & Safety</a>
+                        </li>
+                        <li><a href="hardware.html#tools"
+                                class="text-muted-foreground hover:text-primary transition-colors">Power Tools &
+                                Machinery</a></li>
+                        <li><a href="renovation.html#renovation"
+                                class="text-muted-foreground hover:text-primary transition-colors">Renovation
+                                Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+                <p>&copy; 2025 Weriton Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>
