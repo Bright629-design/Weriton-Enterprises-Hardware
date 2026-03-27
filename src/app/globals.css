@@ -115,3 +115,53 @@
     --tw-prose-invert-th-borders: hsl(var(--border));
     --tw-prose-invert-td-borders: hsl(var(--border));
 }
+
+
+.font-headline {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Carousel Styles */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* ==========================================
+   Mobile Responsiveness Global Safety Rules
+   ========================================== */
+
+/* Prevent images and iframes from overflowing their containers */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Smooth scrolling and iOS font-size fix */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Ensure no horizontal overflow on mobile */
+body {
+    overflow-x: hidden;
+}
+
+/* Full-width containers on small screens */
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

@@ -1,196 +1,139 @@
 "use client";
+import { Phone, Mail, MapPin } from 'lucide-react';
+import React from 'react';
+import Link from 'next/link';
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  phone: z.string().optional(),
-  inquiryType: z.enum(["general", "quote", "support", "partnership", "product"]),
-  message: z.string().min(10, "Please provide some details."),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
-
-export default function ContactPage() {
-  const { toast } = useToast();
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      inquiryType: "general",
-      message: "",
-    },
-  });
-
-  function onSubmit(data: ContactFormValues) {
-    console.log("Contact Form Submitted:", data);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you shortly.",
-    });
-    form.reset();
-  }
-
-  return (
-    <div className="container py-12 md:py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">Contact Us</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question, need support, or want to discuss a project? We're here to help.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                 <Card className="max-w-3xl mx-auto">
-                    <CardHeader>
-                        <CardTitle className="text-2xl font-headline">Send us a Message</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                                <FormField
-                                    control={form.control}
-                                    name="name"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Full Name</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="John Doe" {...field} />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="email"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Email Address</FormLabel>
-                                            <FormControl>
-                                                <Input type="email" placeholder="you@example.com" {...field} />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="inquiryType"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Reason for Inquiry</FormLabel>
-                                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                                <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="Select a reason" />
-                                                </SelectTrigger>
-                                                </FormControl>
-                                                <SelectContent>
-                                                  <SelectItem value="general">General Question</SelectItem>
-                                                  <SelectItem value="quote">Project Quote</SelectItem>
-                                                  <SelectItem value="product">Product Information</SelectItem>
-                                                  <SelectItem value="support">Customer Support</SelectItem>
-                                                  <SelectItem value="partnership">Partnership Inquiry</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                    />
-                                <FormField
-                                    control={form.control}
-                                    name="message"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Message</FormLabel>
-                                            <FormControl>
-                                                <Textarea
-                                                    placeholder="How can we help you?"
-                                                    className="min-h-[120px]"
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
-                                    {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
-                                </Button>
-                            </form>
-                        </Form>
-                    </CardContent>
-                </Card>
+export default function Page() {
+    return (
+        <main className="flex-1">
+        <div className="container py-12 md:py-16">
+            <div className="text-center mb-12">
+                <h1 className="text-4xl md:text-5xl font-headline font-bold">Contact Us</h1>
+                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Have a question, need support, or want to discuss a project? We're here to help.
+                </p>
             </div>
-            <div className="space-y-8">
-                 <div>
-                    <h2 className="text-2xl font-headline font-bold mb-6">Our Information</h2>
-                    <div className="space-y-6">
-                        <Card>
-                            <CardHeader className="flex flex-row items-center gap-4">
-                                <Phone className="h-8 w-8 text-primary"/>
-                                <div>
-                                    <h3 className="font-semibold">By Phone</h3>
-                                    <p className="text-sm text-muted-foreground">Mon-Sat, 7am to 7pm</p>
+
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <div className="max-w-3xl mx-auto rounded-lg border bg-card text-card-foreground shadow-sm">
+                        <div className="flex flex-col space-y-1.5 p-6">
+                            <h3 className="text-2xl font-headline font-semibold leading-none tracking-tight">Send us a
+                                Message</h3>
+                        </div>
+                        <div className="p-6 pt-0">
+                            <form action="mailto:cheruiyotemicky@gmail.com" method="post" enctype="text/plain"
+                                className="space-y-6">
+                                <div className="space-y-2">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        htmlFor="name">Full Name</label>
+                                    <input
+                                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="name" placeholder="John Doe" required />
                                 </div>
-                            </CardHeader>
-                            <CardContent>
-                                <a href="tel:+1234567890" className="text-lg hover:text-primary transition-colors">(123) 456-7890</a>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardHeader className="flex flex-row items-center gap-4">
-                                <Mail className="h-8 w-8 text-primary"/>
-                                <div>
-                                    <h3 className="font-semibold">By Email</h3>
-                                     <p className="text-sm text-muted-foreground">We reply within 24 hours</p>
+                                <div className="space-y-2">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        htmlFor="email">Email Address</label>
+                                    <input
+                                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="email" type="email" placeholder="you@example.com" required />
                                 </div>
-                            </CardHeader>
-                             <CardContent>
-                                <a href="mailto:sales@weritonenterprises.com" className="text-lg hover:text-primary transition-colors">sales@weritonenterprises.com</a>
-                            </CardContent>
-                        </Card>
-                         <Card>
-                            <CardHeader className="flex flex-row items-center gap-4">
-                                <MapPin className="h-8 w-8 text-primary"/>
-                                <div>
-                                    <h3 className="font-semibold">Main Store & Showroom</h3>
-                                     <p className="text-sm text-muted-foreground">Visit us in person</p>
+                                <div className="space-y-2">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        htmlFor="inquiryType">Reason for Inquiry</label>
+                                    <div className="relative">
+                                        <select
+                                            className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            id="inquiryType">
+                                            <option value="general">General Question</option>
+                                            <option value="quote">Project Quote</option>
+                                            <option value="product">Product Information</option>
+                                            <option value="support">Customer Support</option>
+                                            <option value="partnership">Partnership Inquiry</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </CardHeader>
-                             <CardContent>
-                                <address className="not-italic text-lg">
-                                    123 Build Well Rd<br/>
-                                    Constructville, ST 12345
-                                </address>
-                             </CardContent>
-                        </Card>
+                                <div className="space-y-2">
+                                    <label
+                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        htmlFor="message">Message</label>
+                                    <textarea
+                                        className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="message" placeholder="How can we help you?" required></textarea>
+                                </div>
+                                <button
+                                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 w-full"
+                                    type="submit">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div className="space-y-8">
+                    <div>
+                        <h2 className="text-2xl font-headline font-bold mb-6">Our Information</h2>
+                        <div className="space-y-6">
+                            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                <div className="flex flex-row items-center gap-4 p-6">
+                                    <Phone  className="h-8 w-8 text-primary" />
+                                    <div>
+                                        <h3 className="font-semibold">By Phone</h3>
+                                        <p className="text-sm text-muted-foreground">Mon-Sat, 8am to 7pm</p>
+                                    </div>
+                                </div>
+                                <div className="p-6 pt-0">
+                                    <Link href="tel:0739307745"
+                                        className="text-lg hover:text-primary transition-colors">0739307745</Link>
+                                </div>
+                            </div>
+                            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                <div className="flex flex-row items-center gap-4 p-6">
+                                    <Mail  className="h-8 w-8 text-primary" />
+                                    <div>
+                                        <h3 className="font-semibold">By Email</h3>
+                                        <p className="text-sm text-muted-foreground">We reply within 24 hours</p>
+                                    </div>
+                                </div>
+                                <div className="p-6 pt-0">
+                                    <Link href="mailto:cheruiyotemicky@gmail.com"
+                                        className="text-lg hover:text-primary transition-colors">weritonenterprise@gmail.com</Link>
+                                </div>
+                            </div>
+                            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                <div className="flex flex-row items-center gap-4 p-6">
+                                    <MapPin  className="h-8 w-8 text-primary" />
+                                    <div>
+                                        <h3 className="font-semibold">Main Store & Showroom</h3>
+                                        <p className="text-sm text-muted-foreground">Visit us in person</p>
+                                    </div>
+                                </div>
+                                <div className="p-6 pt-0">
+                                    <address className="not-italic text-lg">
+                                        Kipsitet, along kericho-Kisumu road
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Map Section */}
+                    <div>
+                        <h2 className="text-2xl font-headline font-bold mb-6">Find Us</h2>
+                        <div className="rounded-lg overflow-hidden border bg-card shadow-sm aspect-video">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.976029272337!2d35.1583!3d-0.2167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182a56e0775a46c1%3A0x62c953569769a6c6!2sKipsitet!5e0!3m2!1sen!2ske!4v1706178000000!5m2!1sen!2ske"
+                                width="100%" height="100%" style={{ border: '0' }} allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" className="w-full h-full object-cover">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  );
+    </main>
+    );
 }

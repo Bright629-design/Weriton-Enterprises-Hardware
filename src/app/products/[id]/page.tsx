@@ -58,10 +58,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-                <a href={`https://wa.me/1234567890?text=I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}`} target="_blank" rel="noopener noreferrer">
+                <Link href={`https://wa.me/1234567890?text=I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}`} target="_blank" rel="noopener noreferrer">
                     <MessageSquare className="mr-2 h-5 w-5" />
                     Ask on WhatsApp
-                </a>
+                </Link>
             </Button>
           </div>
           <div className="mt-8 border-t pt-6">
