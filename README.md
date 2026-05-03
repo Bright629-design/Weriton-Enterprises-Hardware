@@ -3,7 +3,7 @@
 
 A full-featured business website for **Weriton Enterprises**, a hardware supplier and renovation services company based in Kipsitet, Kenya. Built with React and deployed on Vercel.
 
-🔗 **Live Site:** [weriton-enterprises-hardware.vercel.app](https://weriton-enterprises-hardware.vercel.app)
+🔗 **Site:** [weriton-enterprises-hardware.vercel.app](https://weriton-enterprises-hardware.vercel.app)
 
 ---
 
@@ -12,7 +12,6 @@ A full-featured business website for **Weriton Enterprises**, a hardware supplie
 Weriton Enterprises is a one-stop shop for construction materials, professional tools, finishing supplies, and renovation services. This website serves as their digital storefront — showcasing products, services, past projects, and providing a quote request system.
 
 ---
-
 ## Features
 
 - 🏗️ **Product Catalog** — Construction materials, electrical supplies, plumbing, tools & equipment
