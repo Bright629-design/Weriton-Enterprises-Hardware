@@ -14,14 +14,14 @@ Weriton Enterprises is a one-stop shop for construction materials, professional 
 ---
 ## Features
 
-- 🏗️ **Product Catalog** — Construction materials, electrical supplies, plumbing, tools & equipment
-- 🎨 **Finishing & Security** — Paint, coatings, smart locks, and safety products
-- 🔧 **Renovation Services** — End-to-end renovation and installation service pages
-- 📋 **Quote Request System** — Customers can submit project quote requests
-- 📁 **Projects Portfolio** — Showcase of past work
-- 📝 **Blog** — Articles and updates
-- 📱 **Responsive Design** — Mobile-friendly layout with a hamburger menu
-- 🖼️ **Hero Carousel** — Auto-sliding banner on the homepage
+- **Product Catalog** — Construction materials, electrical supplies, plumbing, tools & equipment
+- **Finishing & Security** — Paint, coatings, smart locks, and safety products
+- **Renovation Services** — End-to-end renovation and installation service pages
+- **Quote Request System** — Customers can submit project quote requests
+- **Projects Portfolio** — Showcase of past work
+- **Blog** — Articles and updates
+- **Responsive Design** — Mobile-friendly layout with a hamburger menu
+- **Hero Carousel** — Auto-sliding banner on the homepage
 
 ---
 
