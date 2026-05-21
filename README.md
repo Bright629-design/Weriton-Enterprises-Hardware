@@ -54,8 +54,8 @@ Weriton Enterprises is a one-stop shop for construction materials, professional 
 
 **Weriton Enterprises**  
 Kipsitet, along Kericho-Kisumu Road  
-📧 sales@weritonenterprises.com  
-📞 0739 307 745
+email: sales@weritonenterprises.com  
+Tel: 0739 307 745
 
 ---
 
