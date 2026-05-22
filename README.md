@@ -1,4 +1,4 @@
-
+ni
 # Weriton Enterprises Hardware — Business Website
 
 A full-featured business website for **Weriton Enterprises**, a hardware supplier and renovation services company based in Kipsitet, Kenya.
@@ -62,4 +62,4 @@ Tel: 0739 307 745
 ## Developer
 
 Built by **Emilio Cheruiyot**  
-BSc Software Engineering — Multimedia University of Kenya
+BSc Software Engineering — MMU
