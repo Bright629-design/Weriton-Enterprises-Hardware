@@ -23,14 +23,7 @@ Weriton Enterprises is a one-stop shop for construction materials, professional 
 - **Responsive Design** — Mobile-friendly layout with a hamburger menu
 - **Hero Carousel** — Auto-sliding banner on the homepage
 
----
 
-## Tech Stack
-
-- **Framework:** React (TSX)
-- **Styling:** CSS / Tailwind
-- **Deployment:** Vercel
-- **Contact:** EmailJS
 
 ---
 
