@@ -8,7 +8,6 @@ A full-featured business website for **Weriton Enterprises**, a hardware supplie
 ---
 
 ## About
-
 Weriton Enterprises is a one-stop shop for construction materials, professional tools, finishing supplies, and renovation services. This website serves as their digital storefront — showcasing products, services, past projects, and providing a quote request system.
 
 ---
@@ -52,7 +51,6 @@ Tel: 0739 307 745
 
 ---
 
-## Developer
-
+## Engineer
 Built by **Emilio Cheruiyot**  
 BSc Software Engineering — MMU
