@@ -23,7 +23,6 @@ Weriton Enterprises is a one-stop shop for construction materials, professional 
 - **Hero Carousel** — Auto-sliding banner on the homepage
 
 
-
 ---
 
 ## Pages
