@@ -156,7 +156,7 @@ export default function Page() {
                             <h3 className="text-2xl font-headline font-bold mb-4">Examples</h3>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1766170507949-d3e120568a2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpY2FsJTIwY2FibGVzfGVufDB8fHx8MTc2ODUwMzk5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/cables.webp"
                                         alt="electrical cables"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
@@ -165,7 +165,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1677256796232-6305d23cb0de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsaWdodCUyMHN3aXRjaGVzfGVufDB8fHx8MTc2ODUwMzk5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/switch.jfif"
                                         alt="light switches"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
@@ -183,7 +183,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2xhciUyMHBhbmVsc3xlbnwwfHx8fDE3Njg0MDEzODB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/solar.jfif"
                                         alt="solar panels"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
