@@ -254,7 +254,7 @@ export default function Page() {
                             <h3 className="text-2xl font-headline font-bold mb-4">Examples</h3>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1746721437832-bcf682d2addc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbHVtYmluZyUyMHBpcGVzfGVufDB8fHx8MTc2ODQ3MzQ4MHww&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/pipe.jfif"
                                         alt="plumbing pipes"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
@@ -272,7 +272,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1497990136619-d0c2de2b5b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3YXRlciUyMHRhbmt8ZW58MHx8fHwxNzY4NDYwMjMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/tank.jfif"
                                         alt="water tank"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
@@ -290,7 +290,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1701877956223-109533153f27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxraXRjaGVuJTIwc2lua3N8ZW58MHx8fHwxNzY4NTAzOTkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/sink.png"
                                         alt="kitchen sinks"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
@@ -299,7 +299,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="relative aspect-square overflow-hidden rounded-lg shadow-md group">
-                                    <img src="https://images.unsplash.com/photo-1595515106886-43b1443a2e8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0b2lsZXRzfGVufDB8fHx8MTc2ODM5ODQ3NHww&ixlib=rb-4.1.0&q=80&w=1080"
+                                    <img src="images/toilet.webp"
                                         alt="modern toilets"
                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
                                     <div
