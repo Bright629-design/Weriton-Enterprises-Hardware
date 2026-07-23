@@ -1,4 +1,4 @@
-ni
+
 # Weriton Enterprises Hardware — Business Website
 
 A full-featured business website for **Weriton Enterprises**, a hardware supplier and renovation services company based in Kipsitet, Kenya.
